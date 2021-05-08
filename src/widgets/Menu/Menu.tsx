@@ -58,16 +58,6 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const TokenInfoWrapper = styled.div`
-  font-size: 16px;
-  font-weight: 600;
-  color: #aa8929;
-
-  ${({ theme }) => theme.mediaQueries.nav} {
-    display: none;
-  }
-`;
-
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -130,9 +120,6 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <TokenInfoWrapper>
-          🐕 ANIMAL ADOPTION ADVOCACY ($PAWS) 🐕 (0x066fc8dd5955534a01a9f892314c9b01b59a9c11)
-        </TokenInfoWrapper>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
