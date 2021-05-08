@@ -13,7 +13,7 @@ import * as IconModule from "./icons";
 import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
-interface Props extends PanelProps, PushedProps {}
+interface Props extends PanelProps, PushedProps { }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { MoonIcon, SunIcon, LanguageIcon } = Icons;
@@ -49,7 +49,7 @@ const SettingsEntry = styled.div`
 const SocialEntry = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 16px;
 `;
@@ -86,10 +86,10 @@ const PanelFooter: React.FC<Props> = ({
         ) : (
           <Skeleton width={80} height={24} />
         )} */}
-        <Flex>
+        <Flex flex="1" justifyContent="space-evenly">
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
-            const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+            const iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
             const mr = index < socials.length - 1 ? "8px" : 0;
             // if (social.items) {
             //   return (

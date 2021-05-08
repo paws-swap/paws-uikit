@@ -1843,8 +1843,8 @@ var useModal = function (modal, closeOnOverlayClick) {
 
 var Icon$I = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "240pt", height: "240pt", viewBox: "0 0 240 240" }, props),
-        React__default['default'].createElement("path", { d: "M267 2386c-55-20-103-61-134-114l-28-47-3-860c-2-631 0-871 9-900 18-63 62-118 121-150l53-30 708-3c583-2 707 0 707 11 0 7-12 53-26 101-14 49-23 90-20 93 2 3 67-53 143-124s198-182 271-247L2200-1v1098c-1 891-3 1105-14 1136-20 55-61 103-114 134l-47 28-860 2c-701 2-867 0-898-11zm703-556c0-5-6-10-12-10-32 0-266-115-256-126 3-2 35 9 74 25 108 46 219 65 379 66 159 0 238-15 374-69 46-19 79-30 75-26-20 20-154 89-211 110-76 27-73 45 6 35 70-9 170-46 235-87 41-27 55-44 82-103 72-155 116-325 134-513 12-127 9-135-58-189-70-56-161-93-264-107-34-4-40-1-72 39-20 24-36 46-36 50 0 3 21 15 48 26 49 21 157 97 149 106-3 2-31-9-63-25-142-71-265-97-428-90-131 6-238 32-352 88l-79 38 54-49c30-27 75-56 100-66 25-9 48-18 50-19 2-2-15-26-38-53-39-46-44-49-79-45-115 15-201 53-273 121l-49 46v67c0 199 118 609 190 660 94 67 320 137 320 100z", transform: "matrix(.1 0 0 -.1 0 240)" }),
-        React__default['default'].createElement("path", { d: "M861 1364c-64-53-64-155 0-208 53-45 141-27 175 36 18 32 17 103-1 138-32 62-121 79-174 34zM1306 1369c-34-27-56-70-56-109 0-67 57-130 117-130 94 0 151 103 108 194-30 63-117 86-169 45z", transform: "matrix(.1 0 0 -.1 0 240)" })));
+        React__default['default'].createElement("path", { d: "M363 2166c-63-30-107-87-123-159-8-37-10-280-8-822 3-767 3-770 25-810 27-51 67-89 118-112 37-17 88-18 679-21 352-2 643 1 647 5 5 5-3 46-17 92-14 45-24 87-22 93 3 9 59-40 253-221C2026 106 2150 0 2160 0c7 0 10 336 8 1013l-3 1012-22 42c-27 51-82 96-132 112-27 8-262 11-817 11H415l-52-24zm677-495c0-5-10-13-22-16-32-9-219-98-215-102 2-1 31 8 64 22 34 13 76 27 95 30 18 3 57 10 87 15 138 25 362 4 483-45 32-13 58-22 58-19 0 6-149 78-192 93-24 9-29 14-20 23 27 27 260-51 313-105 50-50 142-358 159-536 11-106 10-112-9-137-58-74-198-143-288-144-37 0-45 5-76 42-20 23-34 45-32 48s26 14 54 25 70 37 93 58l43 38-46-26c-208-115-509-121-721-14-32 16-58 25-58 20 0-12 107-80 138-87 29-8 28-14-10-63l-33-42-63 5c-82 5-194 59-247 118l-38 41 6 91c7 119 29 223 78 371 59 177 69 192 166 241 44 22 101 45 124 51 57 14 109 15 109 4z", transform: "matrix(.1 0 0 -.1 0 240)" }),
+        React__default['default'].createElement("path", { d: "M952 1247c-75-42-78-149-6-206 87-68 203 55 150 158-29 55-93 76-144 48zM1341 1234c-43-36-57-93-35-140 18-38 66-74 97-74s76 29 92 60c8 16 15 48 15 71 0 33-6 47-34 75-43 43-90 46-135 8z", transform: "matrix(.1 0 0 -.1 0 240)" })));
 };
 
 var Icon$J = function (props) {
@@ -1888,8 +1888,8 @@ var Icon$P = function (props) {
 
 var Icon$Q = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "240pt", height: "240pt", viewBox: "0 0 240 240" }, props),
-        React__default['default'].createElement("path", { d: "M632 2389c-260-30-445-147-540-340-83-169-92-254-92-849s9-680 92-849c57-115 144-202 259-259C520 9 605 0 1200 0s680 9 849 92c198 97 309 278 341 553 13 117 13 993 0 1110-23 198-82 337-190 445s-247 167-445 190c-107 12-1017 11-1123-1zm1096-219c285-29 413-157 442-442 13-130 13-926 0-1056-29-285-157-413-442-442-130-13-926-13-1056 0-285 29-413 157-442 442-13 130-13 926 0 1056 6 55 20 127 31 159 56 166 188 260 395 282 116 12 955 13 1072 1z", transform: "matrix(.1 0 0 -.1 0 240)" }),
-        React__default['default'].createElement("path", { d: "M1795 1979c-89-26-125-141-70-225 41-63 159-73 215-19 81 78 47 214-61 245-39 11-43 11-84-1zM1070 1804c-327-70-543-402-475-729 69-331 400-549 730-480 236 49 431 244 480 480 29 140 12 267-56 404-122 247-407 384-679 325zm225-219c117-31 209-105 261-210 117-240-26-517-294-567-208-39-413 111-454 330-28 150 50 319 183 399 99 59 199 75 304 48z", transform: "matrix(.1 0 0 -.1 0 240)" })));
+        React__default['default'].createElement("path", { d: "M687 2225c-214-36-334-106-428-249-45-69-74-153-94-280-21-130-21-882 0-1012 20-127 49-211 94-280 95-145 213-213 435-249 130-21 882-21 1012 0 222 36 340 104 435 249 47 71 75 156 94 286 21 137 21 877 0 1006-20 127-49 211-94 280-95 145-213 213-435 249-122 20-901 20-1019 0zm1078-197c156-47 241-137 278-291 17-74 17-1020 0-1094-38-159-132-253-293-294-80-20-1020-20-1100 0-157 39-250 130-291 283-17 61-24 932-9 1047 28 215 138 328 350 361 30 4 271 7 535 6 396-2 489-5 530-18z", transform: "matrix(.1 0 0 -.1 0 240)" }),
+        React__default['default'].createElement("path", { d: "M1679 1842c-61-55-44-175 29-203 48-19 113-5 144 30 23 26 28 41 28 82 0 45-4 55-34 85s-40 34-85 34c-41 0-56-5-82-28zM1145 1724c-11-2-45-9-75-15-80-16-183-74-249-139-207-208-207-552 0-760 100-100 233-154 379-154 411 0 662 430 467 798-60 114-193 218-320 252-56 15-171 25-202 18zm152-198c68-18 113-47 164-104 67-75 84-121 84-232 0-75-5-104-21-140-26-55-92-131-140-160-102-64-266-64-368 0-48 29-115 106-138 158-28 63-35 174-14 245 19 64 80 146 142 190 75 53 191 70 291 43z", transform: "matrix(.1 0 0 -.1 0 240)" })));
 };
 
 var Icon$R = function (props) {
@@ -2369,7 +2369,7 @@ var Container$4 = styled__default['default'].div(templateObject_1$C || (template
 });
 styled__default['default'].a(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var SettingsEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
-var SocialEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
+var SocialEntry = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark; _a.cakePriceUsd; var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.priceLink;
     if (!isPushed) {
@@ -2379,9 +2379,9 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container$4, null,
         React__default['default'].createElement(SocialEntry, null,
-            React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
+            React__default['default'].createElement(Flex, { flex: "1", justifyContent: "space-evenly" }, socials.map(function (social, index) {
                 var Icon = Icons$1[social.icon];
-                var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+                var iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
                 var mr = index < socials.length - 1 ? "8px" : 0;
                 // if (social.items) {
                 //   return (
@@ -2697,6 +2697,10 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
+var TokenInfoWrapper = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  font-size: 16px;\n  font-weight: 600;\n  color: #aa8929;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 16px;\n  font-weight: 600;\n  color: #aa8929;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.nav;
+});
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
@@ -2738,6 +2742,7 @@ var Menu = function (_a) {
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+            React__default['default'].createElement(TokenInfoWrapper, null, "\uD83D\uDC15 ANIMAL ADOPTION ADVOCACY ($PAWS) \uD83D\uDC15 (0x066fc8dd5955534a01a9f892314c9b01b59a9c11)"),
             React__default['default'].createElement(Flex, null,
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
@@ -2746,7 +2751,7 @@ var Menu = function (_a) {
             React__default['default'].createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1;
+var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1, templateObject_6;
 
 var ToastAction = function (_a) {
     var action = _a.action;
