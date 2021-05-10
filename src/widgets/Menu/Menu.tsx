@@ -3,13 +3,20 @@ import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
+import Button from "../../components/Button/Button";
+import { SvgProps } from "../../components/Svg";
+import Text from "../../components/Text/Text";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
+import * as IconModule from "./icons";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
+
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
+const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -120,6 +127,16 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
+        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+          {/* alignItems center is a Safari fix */}
+          <Flex alignItems="center">
+            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+            <Text color="textDisabled" mx="4px">
+              /
+            </Text>
+            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+          </Flex>
+        </Button>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}

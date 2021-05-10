@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
+import { CogIcon, SvgProps } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import Flex from "../../components/Flex/Flex";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Link from "../../components/Link/Link";
-import Skeleton from "../../components/Skeleton/Skeleton";
 import Button from "../../components/Button/Button";
 import IconButton from "../../components/Button/IconButton";
 import MenuButton from "./MenuButton";
@@ -16,7 +15,7 @@ import { PanelProps, PushedProps } from "./types";
 interface Props extends PanelProps, PushedProps { }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-const { MoonIcon, SunIcon, LanguageIcon } = Icons;
+const { LanguageIcon } = Icons;
 
 const Container = styled.div`
   flex: none;
@@ -59,11 +58,9 @@ const PanelFooter: React.FC<Props> = ({
   pushNav,
   toggleTheme,
   isDark,
-  cakePriceUsd,
   currentLang,
   langs,
   setLang,
-  priceLink,
 }) => {
   if (!isPushed) {
     return (
@@ -78,30 +75,11 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <SocialEntry>
-        {/* {cakePriceUsd ? (
-          <PriceLink href={priceLink} target="_blank">
-            <PancakeRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
-          </PriceLink>
-        ) : (
-          <Skeleton width={80} height={24} />
-        )} */}
         <Flex flex="1" justifyContent="space-evenly">
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
             const iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
             const mr = index < socials.length - 1 ? "8px" : 0;
-            // if (social.items) {
-            //   return (
-            //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
-            //       {social.items.map((item) => (
-            //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
-            //           {item.label}
-            //         </Link>
-            //       ))}
-            //     </Dropdown>
-            //   );
-            // }
             return (
               <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
                 <Icon {...iconProps} />
@@ -111,16 +89,6 @@ const PanelFooter: React.FC<Props> = ({
         </Flex>
       </SocialEntry>
       <SettingsEntry>
-        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-          {/* alignItems center is a Safari fix */}
-          <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button>
         <Dropdown
           position="top-right"
           target={
