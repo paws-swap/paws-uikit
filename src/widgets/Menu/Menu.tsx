@@ -46,6 +46,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -58,21 +59,13 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   }
 `;
 
-const MobileOnlyOverlay = styled(Overlay)`
-  position: fixed;
-  height: 100%;
-
-  ${({ theme }) => theme.mediaQueries.nav} {
-    display: none;
-  }
-`;
-
 const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 16px;
+  padding: 50px 16px;
+  max-width: 300px;
 `;
 
 const Menu: React.FC<NavProps> = ({
@@ -174,7 +167,7 @@ const Menu: React.FC<NavProps> = ({
           <Flex flex="1" justifyContent="space-evenly">
             {socials.map((social, index) => {
               const Icon = Icons[social.icon];
-              const iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
+              const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
               const mr = index < socials.length - 1 ? "8px" : 0;
               return (
                 <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
