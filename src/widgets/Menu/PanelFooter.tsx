@@ -56,11 +56,6 @@ const SocialEntry = styled.div`
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
-  toggleTheme,
-  isDark,
-  currentLang,
-  langs,
-  setLang,
 }) => {
   if (!isPushed) {
     return (
@@ -86,27 +81,6 @@ const PanelFooter: React.FC<Props> = ({
               </Link>
             );
           })}
-
-          {/* <Dropdown
-            position="top-right"
-            target={
-              <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-                <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-              </Button>
-            }
-          >
-            {langs.map((lang) => (
-              <MenuButton
-                key={lang.code}
-                fullWidth
-                onClick={() => setLang(lang)}
-                // Safari fix
-                style={{ minHeight: "32px", height: "auto" }}
-              >
-                {lang.language}
-              </MenuButton>
-            ))}
-          </Dropdown> */}
         </Flex>
       </SocialEntry>
     </Container>

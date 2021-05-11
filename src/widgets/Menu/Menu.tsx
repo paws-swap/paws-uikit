@@ -9,11 +9,13 @@ import Text from "../../components/Text/Text";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./Logo";
 import Panel from "./Panel";
+import Link from "../../components/Link/Link";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import * as IconModule from "./icons";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
+import { socials, MENU_ENTRY_HEIGHT } from "./config";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { MoonIcon, SunIcon, LanguageIcon } = Icons;
@@ -63,6 +65,14 @@ const MobileOnlyOverlay = styled(Overlay)`
   ${({ theme }) => theme.mediaQueries.nav} {
     display: none;
   }
+`;
+
+const SocialEntry = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${MENU_ENTRY_HEIGHT}px;
+  padding: 0 16px;
 `;
 
 const Menu: React.FC<NavProps> = ({
@@ -143,7 +153,7 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        <Panel
+        {/* <Panel
           isPushed={isPushed}
           isMobile={isMobile}
           showMenu={showMenu}
@@ -156,11 +166,25 @@ const Menu: React.FC<NavProps> = ({
           pushNav={setIsPushed}
           links={links}
           priceLink={priceLink}
-        />
+        /> */}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
-        <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
+        <SocialEntry>
+          <Flex flex="1" justifyContent="space-evenly">
+            {socials.map((social, index) => {
+              const Icon = Icons[social.icon];
+              const iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
+              const mr = index < socials.length - 1 ? "8px" : 0;
+              return (
+                <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+                  <Icon {...iconProps} />
+                </Link>
+              );
+            })}
+          </Flex>
+        </SocialEntry>
+        {/* <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" /> */}
       </BodyWrapper>
     </Wrapper>
   );
