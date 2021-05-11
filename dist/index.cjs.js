@@ -2495,7 +2495,7 @@ var StyledNav = styled__default['default'].nav(templateObject_2$c || (templateOb
     var theme = _a.theme;
     return theme.nav.background;
 });
-var BodyWrapper = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100%;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100%;\n"])));
+var BodyWrapper = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n"])));
 var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);

@@ -50,7 +50,7 @@ const BodyWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
