@@ -2470,11 +2470,14 @@ var templateObject_1$A, templateObject_2$b;
 
 var Icons = IconModule;
 var MoonIcon = Icons.MoonIcon, SunIcon = Icons.SunIcon; Icons.LanguageIcon;
-var Wrapper$1 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"], ["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.isDark ? "/images/bgdark.jpg" : "/images/bglight.jpg";
+});
+var StyledNav = styled.nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
-}, function (_a) {
+}, MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
@@ -2483,7 +2486,6 @@ var MainBodyWrapper = styled.div(templateObject_3$6 || (templateObject_3$6 = __m
     return (showMenu ? MENU_HEIGHT + "px" : 0);
 });
 var SocialEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"])));
-var MobileSocialEntry = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px 16px 5px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px 16px 5px;\n  width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
@@ -2524,42 +2526,27 @@ var Menu = function (_a) {
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu },
-            React.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
-                React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-                React.createElement(SocialEntry, null,
-                    React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
-                        socials.map(function (social, index) {
-                            var Icon = Icons[social.icon];
-                            var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                            var mr = index < socials.length - 1 ? "8px" : 0;
-                            return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                                React.createElement(Icon, __assign({}, iconProps))));
-                        }),
-                        React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                            React.createElement(Flex, { alignItems: "center" },
-                                React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-                                React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-                                React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))))),
-                React.createElement(Flex, null,
-                    React.createElement(UserBlock, { account: account, login: login, logout: logout }),
-                    profile && React.createElement(Avatar, { profile: profile }))),
-            React.createElement(MobileSocialEntry, null,
-                React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
-                    socials.map(function (social, index) {
-                        var Icon = Icons[social.icon];
-                        var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                        var mr = index < socials.length - 1 ? "8px" : 0;
-                        return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                            React.createElement(Icon, __assign({}, iconProps))));
-                    }),
-                    React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                        React.createElement(Flex, { alignItems: "center" },
-                            React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-                            React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-                            React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))),
-        React.createElement(MainBodyWrapper, { showMenu: showMenu }, children)));
+            React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+            React.createElement(Flex, null,
+                React.createElement(UserBlock, { account: account, login: login, logout: logout }),
+                profile && React.createElement(Avatar, { profile: profile }))),
+        React.createElement(MainBodyWrapper, { showMenu: showMenu }, children),
+        React.createElement(SocialEntry, null,
+            React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
+                socials.map(function (social, index) {
+                    var Icon = Icons[social.icon];
+                    var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+                    var mr = index < socials.length - 1 ? "8px" : 0;
+                    return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+                        React.createElement(Icon, __assign({}, iconProps))));
+                }),
+                React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
+                    React.createElement(Flex, { alignItems: "center" },
+                        React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
+                        React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
+                        React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))));
 };
-var templateObject_1$B, templateObject_2$c, templateObject_3$6, templateObject_4$2, templateObject_5$1;
+var templateObject_1$B, templateObject_2$c, templateObject_3$6, templateObject_4$2;
 
 var ToastAction = function (_a) {
     var action = _a.action;
