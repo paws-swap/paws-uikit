@@ -36,7 +36,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
-  height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
   border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
@@ -52,17 +51,19 @@ const MainBodyWrapper = styled.div<{ showMenu: boolean }>`
   transform: translate3d(0, 0, 0);
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
-  transition: margin-top 0.2s;
-  transform: translate3d(0, 0, 0);
-`;
-
 const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 16px;
+  width: 100%;
+`;
+
+const MobileSocialEntry = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 5px;
   width: 100%;
 `;
 
@@ -122,39 +123,65 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
-        <SocialEntry>
-          <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
-            {socials.map((social, index) => {
-              const Icon = Icons[social.icon];
-              const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-              const mr = index < socials.length - 1 ? "8px" : 0;
-              return (
-                <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
-                  <Icon {...iconProps} />
-                </Link>
-              );
-            })}
-            <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-              {/* alignItems center is a Safari fix */}
-              <Flex alignItems="center">
-                <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-                <Text color="textDisabled" mx="4px">
-                  /
+        <Flex flexDirection="column">
+          <Logo
+            isPushed={isPushed}
+            togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+            isDark={isDark}
+            href={homeLink?.href ?? "/"}
+          />
+          <SocialEntry>
+            <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
+              {socials.map((social, index) => {
+                const Icon = Icons[social.icon];
+                const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+                const mr = index < socials.length - 1 ? "8px" : 0;
+                return (
+                  <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+                    <Icon {...iconProps} />
+                  </Link>
+                );
+              })}
+              <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+                {/* alignItems center is a Safari fix */}
+                <Flex alignItems="center">
+                  <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+                  <Text color="textDisabled" mx="4px">
+                    /
             </Text>
-                <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-              </Flex>
-            </Button>
+                  <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+                </Flex>
+              </Button>
+            </Flex>
+          </SocialEntry>
+          <Flex>
+            <UserBlock account={account} login={login} logout={logout} />
+            {profile && <Avatar profile={profile} />}
           </Flex>
-        </SocialEntry>
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
+          <MobileSocialEntry>
+            <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
+              {socials.map((social, index) => {
+                const Icon = Icons[social.icon];
+                const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+                const mr = index < socials.length - 1 ? "8px" : 0;
+                return (
+                  <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+                    <Icon {...iconProps} />
+                  </Link>
+                );
+              })}
+              <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+                {/* alignItems center is a Safari fix */}
+                <Flex alignItems="center">
+                  <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+                  <Text color="textDisabled" mx="4px">
+                    /
+            </Text>
+                  <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+                </Flex>
+              </Button>
+            </Flex>
+          </MobileSocialEntry>
         </Flex>
       </StyledNav>
       <MainBodyWrapper showMenu={showMenu}>
