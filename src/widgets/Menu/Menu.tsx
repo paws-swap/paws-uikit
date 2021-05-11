@@ -46,6 +46,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -53,18 +54,6 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
-  }
-`;
-
-const MobileOnlyOverlay = styled(Overlay)`
-  position: fixed;
-  height: 100%;
-
-  ${({ theme }) => theme.mediaQueries.nav} {
-    display: none;
-  }
 `;
 
 const SocialEntry = styled.div`
@@ -73,6 +62,7 @@ const SocialEntry = styled.div`
   justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 16px;
+  width: 100%;
 `;
 
 const Menu: React.FC<NavProps> = ({
@@ -153,28 +143,14 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        {/* <Panel
-          isPushed={isPushed}
-          isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-          priceLink={priceLink}
-        /> */}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
         <SocialEntry>
-          <Flex flex="1" justifyContent="space-evenly">
+          <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: "300px" }}>
             {socials.map((social, index) => {
               const Icon = Icons[social.icon];
-              const iconProps = { width: "24px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "21px" : "24px", color: "textSubtle", style: { cursor: "pointer" } };
+              const iconProps = { width: "32px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "32px", color: "textSubtle", style: { cursor: "pointer" } };
               const mr = index < socials.length - 1 ? "8px" : 0;
               return (
                 <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
