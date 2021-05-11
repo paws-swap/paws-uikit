@@ -24,6 +24,8 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   background-image: url('${({ theme }) => theme.isDark ? "/images/bgdark.jpg" : "/images/bglight.jpg"}');
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`

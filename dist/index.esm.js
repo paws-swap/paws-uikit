@@ -2471,7 +2471,7 @@ var templateObject_1$A, templateObject_2$b;
 
 var Icons = IconModule;
 var MoonIcon = Icons.MoonIcon, SunIcon = Icons.SunIcon; Icons.LanguageIcon;
-var Wrapper$1 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"], ["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n  background-repeat: no-repeat;\n  background-size: cover;\n"], ["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n  background-repeat: no-repeat;\n  background-size: cover;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? "/images/bgdark.jpg" : "/images/bglight.jpg";
 });
@@ -2652,10 +2652,10 @@ var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { ba
     // text: "#452A7A",
     text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", 
     // card: "#FFFFFF",
-    card: "#bbe2e0", gradients: {
+    card: "#cec10c", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#9A6AFF", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#fbfafd", textDisabled: "#666171", textSubtle: "#e7e0ea", borderColor: "#524B63", card: "#194486", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
 
