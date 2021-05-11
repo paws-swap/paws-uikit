@@ -50,7 +50,6 @@ const MainBodyWrapper = styled.div`
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
-  flex-grow: 1;
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
@@ -62,7 +61,7 @@ const SocialEntry = styled.div`
   justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 50px 16px;
-  max-width: 300px;
+  width: 100%;
 `;
 
 const Menu: React.FC<NavProps> = ({
@@ -157,11 +156,9 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         /> */}
-        <Inner isPushed={isPushed} showMenu={showMenu}>
-          {children}
-        </Inner>
+        {children}
         <SocialEntry>
-          <Flex flex="1" justifyContent="space-evenly">
+          <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
             {socials.map((social, index) => {
               const Icon = Icons[social.icon];
               const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
@@ -174,7 +171,6 @@ const Menu: React.FC<NavProps> = ({
             })}
           </Flex>
         </SocialEntry>
-        {/* <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" /> */}
       </MainBodyWrapper>
     </Wrapper>
   );

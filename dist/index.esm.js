@@ -2492,11 +2492,11 @@ var StyledNav = styled.nav(templateObject_2$c || (templateObject_2$c = __makeTem
     return theme.nav.background;
 });
 var MainBodyWrapper = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n"])));
-var Inner = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
 });
-var SocialEntry = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 50px 16px;\n  max-width: 300px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 50px 16px;\n  max-width: 300px;\n"])), MENU_ENTRY_HEIGHT);
+var SocialEntry = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 50px 16px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 50px 16px;\n  width: 100%;\n"])), MENU_ENTRY_HEIGHT);
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
@@ -2547,9 +2547,9 @@ var Menu = function (_a) {
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
         React.createElement(MainBodyWrapper, null,
-            React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
+            children,
             React.createElement(SocialEntry, null,
-                React.createElement(Flex, { flex: "1", justifyContent: "space-evenly" }, socials.map(function (social, index) {
+                React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } }, socials.map(function (social, index) {
                     var Icon = Icons[social.icon];
                     var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
                     var mr = index < socials.length - 1 ? "8px" : 0;
