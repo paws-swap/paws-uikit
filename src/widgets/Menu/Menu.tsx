@@ -43,7 +43,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   transform: translate3d(0, 0, 0);
 `;
 
-const BodyWrapper = styled.div`
+const MainBodyWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -54,9 +54,6 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-  ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
-  }
 `;
 
 const SocialEntry = styled.div`
@@ -145,7 +142,7 @@ const Menu: React.FC<NavProps> = ({
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
-      <BodyWrapper>
+      <MainBodyWrapper>
         {/* <Panel
           isPushed={isPushed}
           isMobile={isMobile}
@@ -178,7 +175,7 @@ const Menu: React.FC<NavProps> = ({
           </Flex>
         </SocialEntry>
         {/* <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" /> */}
-      </BodyWrapper>
+      </MainBodyWrapper>
     </Wrapper>
   );
 };
