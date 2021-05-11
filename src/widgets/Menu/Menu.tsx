@@ -63,7 +63,7 @@ const SocialEntry = styled.div`
   align-items: center;
   justify-content: center;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 50px 16px;
+  padding: 20px 16px;
   width: 100%;
 `;
 
@@ -145,21 +145,6 @@ const Menu: React.FC<NavProps> = ({
         </Flex>
       </StyledNav>
       <MainBodyWrapper showMenu={showMenu}>
-        {/* <Panel
-          isPushed={isPushed}
-          isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-          priceLink={priceLink}
-        /> */}
-        {children}
         <SocialEntry>
           <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
             {socials.map((social, index) => {
@@ -174,6 +159,7 @@ const Menu: React.FC<NavProps> = ({
             })}
           </Flex>
         </SocialEntry>
+        {children}
       </MainBodyWrapper>
     </Wrapper>
   );
