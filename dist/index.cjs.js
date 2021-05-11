@@ -2419,6 +2419,28 @@ var links = [
         ],
     },
 ];
+var socials = [
+    {
+        label: "Twitter",
+        icon: "TwitterIcon",
+        href: "https://mobile.twitter.com/pawsofficial1",
+    },
+    {
+        label: "Instagram",
+        icon: "InstagramIcon",
+        href: "http://www.instagram.com/pawsteamofficial",
+    },
+    {
+        label: "Telegram",
+        icon: "TelegramIcon",
+        href: "https://t.me/PawsOfficial",
+    },
+    {
+        label: "Discord",
+        icon: "DiscordIcon",
+        href: "https://discord.gg/njGqejnKdU",
+    },
+];
 var MENU_HEIGHT = 64;
 
 var Icon$1e = function (props) {
@@ -2814,6 +2836,7 @@ exports.CogIcon = Icon$l;
 exports.CommunityIcon = Icon$m;
 exports.CopyIcon = Icon$n;
 exports.CopyToClipboard = CopyToClipboard;
+exports.DiscordIcon = Icon$I;
 exports.Dropdown = Dropdown;
 exports.ErrorIcon = Icon$1;
 exports.Flex = Flex;
@@ -2821,10 +2844,10 @@ exports.GooseRoundIcon = Icon$w;
 exports.Heading = Heading;
 exports.HelpIcon = Icon$o;
 exports.IconButton = IconButton;
-exports.IconModule = IconModule;
 exports.Image = Image;
 exports.InfoIcon = Icon$3;
 exports.Input = Input;
+exports.InstagramIcon = Icon$Q;
 exports.Link = Link;
 exports.LinkExternal = LinkExternal;
 exports.ListViewIcon = Icon$p;
@@ -2834,6 +2857,7 @@ exports.Menu = Menu;
 exports.MinusIcon = Icon$s;
 exports.Modal = Modal;
 exports.ModalProvider = ModalProvider;
+exports.MoonIcon = Icon$S;
 exports.OpenNewIcon = Icon$t;
 exports.PancakeRoundIcon = Icon$v;
 exports.PancakesIcon = Icon$u;
@@ -2846,15 +2870,18 @@ exports.ResetCSS = ResetCSS;
 exports.SearchIcon = Icon$E;
 exports.Skeleton = Skeleton;
 exports.Spinner = Spinner;
+exports.SunIcon = Icon$W;
 exports.Svg = Svg;
 exports.SwapVertIcon = Icon$F;
 exports.SyncAltIcon = Icon$G;
 exports.Tag = Tag;
+exports.TelegramIcon = Icon$X;
 exports.Text = Text;
 exports.Ticket = Icon$C;
 exports.TicketRound = Icon$D;
 exports.ToastContainer = ToastContainer;
 exports.Toggle = Toggle;
+exports.TwitterIcon = Icon$_;
 exports.VerifiedIcon = Icon$z;
 exports.WarningIcon = Icon$H;
 exports.Won = Icon$B;
@@ -2867,6 +2894,7 @@ exports.light = lightTheme;
 exports.lightColors = lightColors;
 exports.makeRender = makeRender;
 exports.menuConfig = links;
+exports.menuSocial = socials;
 exports.toastTypes = types;
 exports.useMatchBreakpoints = useMatchBreakpoints;
 exports.useModal = useModal;
