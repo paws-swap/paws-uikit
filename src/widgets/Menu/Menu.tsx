@@ -62,7 +62,6 @@ const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${MENU_ENTRY_HEIGHT}px;
   padding: 20px 16px;
   width: 100%;
 `;
