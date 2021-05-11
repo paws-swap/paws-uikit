@@ -62,7 +62,7 @@ const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 16px;
+  padding: 30px 16px 5px;
   width: 100%;
 `;
 
