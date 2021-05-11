@@ -31,8 +31,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   left: 0;
   transition: top 0.2s;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding-left: 8px;
   padding-right: 16px;
   width: 100%;
@@ -123,7 +122,7 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Flex flexDirection="column">
+        <Flex justifyContent="space-between" alignItems="center">
           <Logo
             isPushed={isPushed}
             togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
@@ -158,31 +157,31 @@ const Menu: React.FC<NavProps> = ({
             <UserBlock account={account} login={login} logout={logout} />
             {profile && <Avatar profile={profile} />}
           </Flex>
-          <MobileSocialEntry>
-            <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
-              {socials.map((social, index) => {
-                const Icon = Icons[social.icon];
-                const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                const mr = index < socials.length - 1 ? "8px" : 0;
-                return (
-                  <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
-                    <Icon {...iconProps} />
-                  </Link>
-                );
-              })}
-              <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-                {/* alignItems center is a Safari fix */}
-                <Flex alignItems="center">
-                  <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-                  <Text color="textDisabled" mx="4px">
-                    /
-            </Text>
-                  <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-                </Flex>
-              </Button>
-            </Flex>
-          </MobileSocialEntry>
         </Flex>
+        <MobileSocialEntry>
+          <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
+            {socials.map((social, index) => {
+              const Icon = Icons[social.icon];
+              const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+              const mr = index < socials.length - 1 ? "8px" : 0;
+              return (
+                <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+                  <Icon {...iconProps} />
+                </Link>
+              );
+            })}
+            <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+              {/* alignItems center is a Safari fix */}
+              <Flex alignItems="center">
+                <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+                <Text color="textDisabled" mx="4px">
+                  /
+            </Text>
+                <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+              </Flex>
+            </Button>
+          </Flex>
+        </MobileSocialEntry>
       </StyledNav>
       <MainBodyWrapper showMenu={showMenu}>
         {children}

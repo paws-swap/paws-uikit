@@ -2484,7 +2484,7 @@ var templateObject_1$A, templateObject_2$b;
 var Icons = IconModule;
 var MoonIcon = Icons.MoonIcon, SunIcon = Icons.SunIcon; Icons.LanguageIcon;
 var Wrapper$1 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, function (_a) {
@@ -2537,7 +2537,7 @@ var Menu = function (_a) {
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
-            React__default['default'].createElement(Flex, { flexDirection: "column" },
+            React__default['default'].createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
                 React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 React__default['default'].createElement(SocialEntry, null,
                     React__default['default'].createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
@@ -2555,21 +2555,21 @@ var Menu = function (_a) {
                                 React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))))),
                 React__default['default'].createElement(Flex, null,
                     React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
-                    profile && React__default['default'].createElement(Avatar, { profile: profile })),
-                React__default['default'].createElement(MobileSocialEntry, null,
-                    React__default['default'].createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
-                        socials.map(function (social, index) {
-                            var Icon = Icons[social.icon];
-                            var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                            var mr = index < socials.length - 1 ? "8px" : 0;
-                            return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                                React__default['default'].createElement(Icon, __assign({}, iconProps))));
-                        }),
-                        React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                            React__default['default'].createElement(Flex, { alignItems: "center" },
-                                React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-                                React__default['default'].createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-                                React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))))))),
+                    profile && React__default['default'].createElement(Avatar, { profile: profile }))),
+            React__default['default'].createElement(MobileSocialEntry, null,
+                React__default['default'].createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
+                    socials.map(function (social, index) {
+                        var Icon = Icons[social.icon];
+                        var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+                        var mr = index < socials.length - 1 ? "8px" : 0;
+                        return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+                            React__default['default'].createElement(Icon, __assign({}, iconProps))));
+                    }),
+                    React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
+                        React__default['default'].createElement(Flex, { alignItems: "center" },
+                            React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
+                            React__default['default'].createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
+                            React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))),
         React__default['default'].createElement(MainBodyWrapper, { showMenu: showMenu }, children)));
 };
 var templateObject_1$B, templateObject_2$c, templateObject_3$6, templateObject_4$2, templateObject_5$1;
