@@ -2495,7 +2495,7 @@ var StyledNav = styled__default['default'].nav(templateObject_2$c || (templateOb
     var theme = _a.theme;
     return theme.nav.background;
 });
-var BodyWrapper = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n"])));
+var BodyWrapper = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100%;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-height: 100%;\n"])));
 var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
@@ -2663,7 +2663,7 @@ var brandColors = {
 };
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#F1FBFA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", 
     // text: "#452A7A",
-    text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", 
+    text: "#452A7A", textDisabled: "#d2d6d8", textSubtle: "#73659a", borderColor: "#E9EAEB", 
     // card: "#FFFFFF",
     card: "#cec10c", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
