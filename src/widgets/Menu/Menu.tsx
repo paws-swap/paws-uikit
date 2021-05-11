@@ -43,10 +43,13 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   transform: translate3d(0, 0, 0);
 `;
 
-const MainBodyWrapper = styled.div`
+const MainBodyWrapper = styled.div<{ showMenu: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  transition: margin-top 0.2s;
+  transform: translate3d(0, 0, 0);
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -141,7 +144,7 @@ const Menu: React.FC<NavProps> = ({
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
-      <MainBodyWrapper>
+      <MainBodyWrapper showMenu={showMenu}>
         {/* <Panel
           isPushed={isPushed}
           isMobile={isMobile}
