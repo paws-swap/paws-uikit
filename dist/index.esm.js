@@ -2406,28 +2406,6 @@ var links = [
         ],
     },
 ];
-var socials = [
-    {
-        label: "Twitter",
-        icon: "TwitterIcon",
-        href: "https://mobile.twitter.com/pawsofficial1",
-    },
-    {
-        label: "Instagram",
-        icon: "InstagramIcon",
-        href: "http://www.instagram.com/pawsteamofficial",
-    },
-    {
-        label: "Telegram",
-        icon: "TelegramIcon",
-        href: "https://t.me/PawsOfficial",
-    },
-    {
-        label: "Discord",
-        icon: "DiscordIcon",
-        href: "https://discord.gg/njGqejnKdU",
-    },
-];
 var MENU_HEIGHT = 64;
 
 var Icon$1e = function (props) {
@@ -2469,12 +2447,12 @@ var Avatar = function (_a) {
 var templateObject_1$A, templateObject_2$b;
 
 var Icons = IconModule;
-var MoonIcon = Icons.MoonIcon, SunIcon = Icons.SunIcon; Icons.LanguageIcon;
+Icons.MoonIcon; Icons.SunIcon; Icons.LanguageIcon;
 var Wrapper$1 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"], ["\n  position: relative;\n  width: 100%;\n  background-image: url('", "');\n"])), function (_a) {
     var theme = _a.theme;
     return theme.isDark ? "/images/bgdark.jpg" : "/images/bglight.jpg";
 });
-var StyledNav = styled.nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  flex-direction: column;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  height: ", "px;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
@@ -2485,10 +2463,9 @@ var MainBodyWrapper = styled.div(templateObject_3$6 || (templateObject_3$6 = __m
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
 });
-var SocialEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
@@ -2530,23 +2507,9 @@ var Menu = function (_a) {
             React.createElement(Flex, null,
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
-        React.createElement(MainBodyWrapper, { showMenu: showMenu }, children),
-        React.createElement(SocialEntry, null,
-            React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
-                socials.map(function (social, index) {
-                    var Icon = Icons[social.icon];
-                    var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                    var mr = index < socials.length - 1 ? "8px" : 0;
-                    return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                        React.createElement(Icon, __assign({}, iconProps))));
-                }),
-                React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                    React.createElement(Flex, { alignItems: "center" },
-                        React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-                        React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-                        React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" })))))));
+        React.createElement(MainBodyWrapper, { showMenu: showMenu }, children)));
 };
-var templateObject_1$B, templateObject_2$c, templateObject_3$6, templateObject_4$2;
+var templateObject_1$B, templateObject_2$c, templateObject_3$6;
 
 var ToastAction = function (_a) {
     var action = _a.action;
@@ -2801,4 +2764,4 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light, button: light$1, colors: lightColors, card: light$2, toggle: light$4, nav: light$5, modal: light$6, radio: light$3 });
 
-export { Icon$4 as AddIcon, Alert, Icon$5 as ArrowBackIcon, Icon$6 as ArrowDownIcon, Icon$7 as ArrowDropDownIcon, Icon$8 as ArrowDropUpIcon, Icon$9 as ArrowForwardIcon, Icon$a as AutoRenewIcon, BackgroundImage, GridLayout as BaseLayout, Icon$b as BinanceIcon, Icon$2 as BlockIcon, Breadcrumbs, Icon$c as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$e as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$d as CardViewIcon, GridLayout$1 as CardsLayout, Checkbox, Icon as CheckmarkCircleIcon, Icon$f as CheckmarkIcon, Icon$g as ChevronDownIcon, Icon$h as ChevronLeftIcon, Icon$i as ChevronRightIcon, Icon$j as ChevronUpIcon, Icon$k as CloseIcon, Icon$l as CogIcon, Icon$m as CommunityIcon, Icon$n as CopyIcon, CopyToClipboard, Dropdown, Icon$1 as ErrorIcon, Flex, Icon$w as GooseRoundIcon, Heading, Icon$o as HelpIcon, IconButton, Image, Icon$3 as InfoIcon, Input, Link, LinkExternal, Icon$p as ListViewIcon, Icon$q as LogoIcon, Icon$r as LogoRoundIcon, Menu, Icon$s as MinusIcon, Modal, ModalProvider, Icon$t as OpenNewIcon, Icon$v as PancakeRoundIcon, Icon$u as PancakesIcon, Icon$x as PrizeIcon, Progress, Icon$A as ProgressBunny, Radio, Icon$y as RemoveIcon, ResetCSS, Icon$E as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$G as SyncAltIcon, Tag, Text, Icon$C as Ticket, Icon$D as TicketRound, ToastContainer, Toggle, Icon$z as VerifiedIcon, Icon$H as WarningIcon, Icon$B as Won, variants$1 as alertVariants, byTextAscending, byTextDescending, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useWalletModal };
+export { Icon$4 as AddIcon, Alert, Icon$5 as ArrowBackIcon, Icon$6 as ArrowDownIcon, Icon$7 as ArrowDropDownIcon, Icon$8 as ArrowDropUpIcon, Icon$9 as ArrowForwardIcon, Icon$a as AutoRenewIcon, BackgroundImage, GridLayout as BaseLayout, Icon$b as BinanceIcon, Icon$2 as BlockIcon, Breadcrumbs, Icon$c as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$e as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$d as CardViewIcon, GridLayout$1 as CardsLayout, Checkbox, Icon as CheckmarkCircleIcon, Icon$f as CheckmarkIcon, Icon$g as ChevronDownIcon, Icon$h as ChevronLeftIcon, Icon$i as ChevronRightIcon, Icon$j as ChevronUpIcon, Icon$k as CloseIcon, Icon$l as CogIcon, Icon$m as CommunityIcon, Icon$n as CopyIcon, CopyToClipboard, Dropdown, Icon$1 as ErrorIcon, Flex, Icon$w as GooseRoundIcon, Heading, Icon$o as HelpIcon, IconButton, IconModule, Image, Icon$3 as InfoIcon, Input, Link, LinkExternal, Icon$p as ListViewIcon, Icon$q as LogoIcon, Icon$r as LogoRoundIcon, Menu, Icon$s as MinusIcon, Modal, ModalProvider, Icon$t as OpenNewIcon, Icon$v as PancakeRoundIcon, Icon$u as PancakesIcon, Icon$x as PrizeIcon, Progress, Icon$A as ProgressBunny, Radio, Icon$y as RemoveIcon, ResetCSS, Icon$E as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$G as SyncAltIcon, Tag, Text, Icon$C as Ticket, Icon$D as TicketRound, ToastContainer, Toggle, Icon$z as VerifiedIcon, Icon$H as WarningIcon, Icon$B as Won, variants$1 as alertVariants, byTextAscending, byTextDescending, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useWalletModal };

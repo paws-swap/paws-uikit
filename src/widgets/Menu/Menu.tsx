@@ -32,7 +32,8 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   left: 0;
   transition: top 0.2s;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: ${MENU_HEIGHT}px;
   padding-left: 8px;
   padding-right: 16px;
@@ -50,14 +51,6 @@ const MainBodyWrapper = styled.div<{ showMenu: boolean }>`
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
-`;
-
-const SocialEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 16px;
-  width: 100%;
 `;
 
 const Menu: React.FC<NavProps> = ({
@@ -130,30 +123,6 @@ const Menu: React.FC<NavProps> = ({
       <MainBodyWrapper showMenu={showMenu}>
         {children}
       </MainBodyWrapper>
-      <SocialEntry>
-        <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
-          {socials.map((social, index) => {
-            const Icon = Icons[social.icon];
-            const iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-            const mr = index < socials.length - 1 ? "8px" : 0;
-            return (
-              <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
-                <Icon {...iconProps} />
-              </Link>
-            );
-          })}
-          <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-            {/* alignItems center is a Safari fix */}
-            <Flex alignItems="center">
-              <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-              <Text color="textDisabled" mx="4px">
-                /
-            </Text>
-              <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-            </Flex>
-          </Button>
-        </Flex>
-      </SocialEntry>
     </Wrapper>
   );
 };
