@@ -62,7 +62,7 @@ const SocialEntry = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 16px 5px;
+  padding: 5px 16px;
   width: 100%;
 `;
 
@@ -128,22 +128,6 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-          {/* alignItems center is a Safari fix */}
-          <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button>
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
-        </Flex>
-      </StyledNav>
-      <MainBodyWrapper showMenu={showMenu}>
         <SocialEntry>
           <Flex flex="1" justifyContent="space-evenly" style={{ maxWidth: '300px' }}>
             {socials.map((social, index) => {
@@ -156,8 +140,24 @@ const Menu: React.FC<NavProps> = ({
                 </Link>
               );
             })}
+            <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+              {/* alignItems center is a Safari fix */}
+              <Flex alignItems="center">
+                <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+                <Text color="textDisabled" mx="4px">
+                  /
+            </Text>
+                <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+              </Flex>
+            </Button>
           </Flex>
         </SocialEntry>
+        <Flex>
+          <UserBlock account={account} login={login} logout={logout} />
+          {profile && <Avatar profile={profile} />}
+        </Flex>
+      </StyledNav>
+      <MainBodyWrapper showMenu={showMenu}>
         {children}
       </MainBodyWrapper>
     </Wrapper>

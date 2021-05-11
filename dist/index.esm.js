@@ -2486,7 +2486,7 @@ styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
 });
-var SocialEntry = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 30px 16px 5px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 30px 16px 5px;\n  width: 100%;\n"])));
+var SocialEntry = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 5px 16px;\n  width: 100%;\n"])));
 var Menu = function (_a) {
     var _b;
     var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
@@ -2528,24 +2528,24 @@ var Menu = function (_a) {
     return (React.createElement(Wrapper$1, null,
         React.createElement(StyledNav, { showMenu: showMenu },
             React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-            React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                React.createElement(Flex, { alignItems: "center" },
-                    React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-                    React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-                    React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))),
+            React.createElement(SocialEntry, null,
+                React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } },
+                    socials.map(function (social, index) {
+                        var Icon = Icons[social.icon];
+                        var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
+                        var mr = index < socials.length - 1 ? "8px" : 0;
+                        return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+                            React.createElement(Icon, __assign({}, iconProps))));
+                    }),
+                    React.createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
+                        React.createElement(Flex, { alignItems: "center" },
+                            React.createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
+                            React.createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
+                            React.createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))))),
             React.createElement(Flex, null,
                 React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React.createElement(Avatar, { profile: profile }))),
-        React.createElement(MainBodyWrapper, { showMenu: showMenu },
-            React.createElement(SocialEntry, null,
-                React.createElement(Flex, { flex: "1", justifyContent: "space-evenly", style: { maxWidth: '300px' } }, socials.map(function (social, index) {
-                    var Icon = Icons[social.icon];
-                    var iconProps = { width: "30px", height: social.icon === 'InstagramIcon' || social.icon === 'DiscordIcon' ? "26px" : "30px", color: "textSubtle", style: { cursor: "pointer" } };
-                    var mr = index < socials.length - 1 ? "8px" : 0;
-                    return (React.createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
-                        React.createElement(Icon, __assign({}, iconProps))));
-                }))),
-            children)));
+        React.createElement(MainBodyWrapper, { showMenu: showMenu }, children)));
 };
 var templateObject_1$B, templateObject_2$c, templateObject_3$6, templateObject_4$2, templateObject_5$1;
 
