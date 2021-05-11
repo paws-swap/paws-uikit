@@ -23,6 +23,7 @@ const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  background-image: url('${({ theme }) => theme.isDark ? "/images/bgdark.jpg" : "/images/bglight.jpg"}');
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
